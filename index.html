@@ -3,103 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shivam Pal — Hindi Legal Content Writer. सरल और स्पष्ट हिंदी में कानूनी जानकारी।">
   <title>Shivam Pal | Hindi Legal Content Writer</title>
-  <meta name="description" content="Shivam Pal - Hindi Legal Content Writer. सरल, स्पष्ट और शोध-आधारित हिंदी कानूनी content.">
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
-    .nav{background:#111827;color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center}
-    .nav strong{font-size:21px}.nav span{color:#cbd5e1;font-size:14px}
-    .hero{padding:70px 7%;background:linear-gradient(135deg,#111827,#26364f);color:#fff}
-    .hero h1{font-size:42px;line-height:1.15;margin:10px 0 16px}.hero p{max-width:680px;color:#dbe4f0;font-size:18px}
-    .btn{display:inline-block;margin-top:25px;padding:12px 20px;border-radius:8px;background:#fff;color:#111827;text-decoration:none;font-weight:bold;margin-right:8px}
-    .btn.dark{background:#334155;color:#fff}
-    section{max-width:1050px;margin:auto;padding:55px 7%}
-    h2{font-size:28px;margin-bottom:18px}.intro{color:#526071}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:25px}
-    .card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 5px 20px rgba(15,23,42,.07)}
-    .card h3{margin-bottom:8px;font-size:19px}.card p{color:#5b6677}
-    .sample{border-left:4px solid #334155;padding:20px;background:#fff;border-radius:10px;margin-top:20px}
-    .contact{background:#e9eef5;border-radius:16px;padding:28px}
-    footer{text-align:center;padding:25px;background:#111827;color:#cbd5e1;font-size:14px}
-    a{color:inherit}
-    @media(max-width:600px){.hero h1{font-size:33px}.hero{padding-top:50px}.nav{padding:15px 5%}}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,"Noto Sans Devanagari",sans-serif;
+      color:#172033;background:#f7f8fb;line-height:1.7
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:100;
+      background:#0d1526;color:white;
+      border-bottom:1px solid rgba(255,255,255,.1)
+    }
+    .nav{
+      min-height:72px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px
+    }
+    .brand{font-size:25px;font-weight:800;letter-spacing:.2px}
+    .tag{font-size:15px;color:#cbd5e1}
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{font-size:14px;color:#dbe4f0}
+    nav a:hover{color:white}
+
+    .hero{
+      color:white;
+      background:linear-gradient(135deg,#101a2d,#223653);
+      padding:90px 0 100px
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.25fr .75fr;
+      gap:55px;align-items:center
+    }
+    .eyebrow{
+      color:#b9c8dc;text-transform:uppercase;
+      letter-spacing:2px;font-size:13px;font-weight:700;
+      margin-bottom:12px
+    }
+    h1{font-size:clamp(40px,6vw,65px);line-height:1.08;margin-bottom:22px}
+    .hero p{font-size:18px;color:#dce4ef;max-width:690px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-block;padding:13px 22px;border-radius:10px;
+      font-weight:700;border:1px solid transparent
+    }
+    .btn-primary{background:white;color:#142039}
+    .btn-secondary{border-color:#526783;color:white}
+    .btn:hover{transform:translateY(-1px)}
+
+    .hero-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:20px;padding:30px;
+      backdrop-filter:blur(8px)
+    }
+    .law-mark{
+      width:70px;height:70px;border-radius:18px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.12);
+      font-size:34px;margin-bottom:20px
+    }
+    .hero-card h2{font-size:22px;margin-bottom:8px}
+    .hero-card p{font-size:15px;color:#cbd5e1}
+
+    section{padding:78px 0}
+    .section-head{margin-bottom:35px}
+    .section-head h2{font-size:34px;line-height:1.2;margin-bottom:8px}
+    .section-head p{color:#657086}
+
+    .about{
+      display:grid;grid-template-columns:.8fr 1.2fr;
+      gap:45px;align-items:start
+    }
+    .about-box{
+      background:white;border:1px solid #e4e8ef;
+      border-radius:18px;padding:30px;
+      box-shadow:0 8px 25px rgba(20,32,57,.05)
+    }
+    .about-box h3{font-size:21px;margin-bottom:12px}
+    .about-box p{color:#5d687b}
+
+    .cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+    }
+    .card{
+      background:white;border:1px solid #e3e7ee;
+      border-radius:16px;padding:25px;
+      transition:.2s;box-shadow:0 7px 22px rgba(20,32,57,.04)
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(20,32,57,.09)}
+    .icon{font-size:28px;margin-bottom:12px}
+    .card h3{font-size:19px;margin-bottom:7px}
+    .card p{font-size:14px;color:#697386}
+
+    .work{background:#eef2f7}
+    .work-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .work-item{
+      background:white;border-radius:15px;padding:22px;
+      border:1px solid #e0e5ec
+    }
+    .work-item h3{font-size:18px;margin-bottom:6px}
+    .work-item p{font-size:14px;color:#687386}
+
+    .contact{
+      background:#111b2e;color:white;
+      border-radius:24px;padding:48px
+    }
+    .contact p{color:#c8d2e1;max-width:650px;margin:10px 0 22px}
+    .contact-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .contact .btn-secondary{border-color:#526783}
+
+    footer{
+      background:#0d1526;color:#aeb9ca;
+      padding:28px 0;text-align:center;font-size:13px
+    }
+
+    @media(max-width:800px){
+      .hero{padding:65px 0 70px}
+      .hero-grid,.about{grid-template-columns:1fr}
+      .hero-card{display:none}
+      .cards{grid-template-columns:1fr 1fr}
+      nav{display:none}
+      .tag{font-size:13px}
+    }
+    @media(max-width:520px){
+      .nav{min-height:64px}
+      .brand{font-size:21px}
+      .tag{display:none}
+      h1{font-size:40px}
+      .hero p{font-size:16px}
+      section{padding:55px 0}
+      .section-head h2{font-size:29px}
+      .cards,.work-list{grid-template-columns:1fr}
+      .contact{padding:30px 23px}
+      .btn{width:100%;text-align:center}
+    }
   </style>
 </head>
+
 <body>
 
-  <nav class="nav">
-    <strong>Shivam Pal</strong>
-    <span>Hindi Legal Content Writer</span>
-  </nav>
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">Shivam Pal</a>
+    <span class="tag">Hindi Legal Content Writer</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#work">My Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <header class="hero">
-    <p>HELLO, I'M SHIVAM PAL</p>
-    <h1>Hindi Legal Content Writer</h1>
-    <p>
-      सरल, स्पष्ट और reader-friendly हिंदी में कानूनी विषयों पर content लिखने में रुचि।
-      मेरा लक्ष्य complex legal information को आसान भाषा में प्रस्तुत करना है।
-    </p>
-    <a class="btn" href="#work">View My Work</a>
-    <a class="btn dark" href="#contact">Contact Me</a>
-  </header>
+<main>
 
-  <section>
-    <h2>About Me</h2>
-    <p class="intro">
-      मैं Shivam Pal हूँ। Law background के साथ हिंदी legal content writing पर काम कर रहा हूँ।
-      मैं legal topics, explainers, educational articles और social-media content को
-      सरल हिंदी में तैयार करने पर focus करता हूँ।
-    </p>
-  </section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Legal Content • Hindi • Simple</div>
+        <h1>कानून को<br>सरल भाषा में समझें।</h1>
+        <p>
+          मैं Shivam Pal हूँ। मेरा focus कानूनी विषयों, explainers और
+          educational content को सरल, स्पष्ट और reader-friendly हिंदी में प्रस्तुत करना है।
+        </p>
 
-  <section>
-    <h2>What I Can Write</h2>
-    <div class="grid">
-      <div class="card"><h3>⚖️ Legal Articles</h3><p>कानूनी विषयों पर आसान और structured हिंदी articles.</p></div>
-      <div class="card"><h3>📚 Legal Explainers</h3><p>कठिन legal concepts को सामान्य भाषा में समझाने वाला content.</p></div>
-      <div class="card"><h3>📱 Social Media Content</h3><p>Law-related Instagram, Facebook और LinkedIn posts के लिए content.</p></div>
-      <div class="card"><h3>📝 Website Content</h3><p>Legal websites के लिए informative pages और educational content.</p></div>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#work">मेरा काम देखें</a>
+          <a class="btn btn-secondary" href="#contact">संपर्क करें</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="law-mark">⚖️</div>
+        <h2>Hindi Legal Content</h2>
+        <p>Complex legal information को आसान भाषा में समझाने पर focus.</p>
+      </div>
     </div>
   </section>
 
-  <section id="work">
-    <h2>Portfolio Sample</h2>
-    <div class="sample">
-      <h3>Sample Topic: FIR क्या है?</h3>
-      <p>
-        FIR यानी First Information Report किसी संज्ञेय अपराध की सूचना पुलिस के पास
-        दर्ज होने वाली प्रारंभिक रिपोर्ट है। यह आपराधिक प्रक्रिया में एक महत्वपूर्ण
-        दस्तावेज होता है। किसी मामले में FIR की भूमिका और उसके बाद की प्रक्रिया को
-        समझना आम व्यक्ति के लिए उपयोगी हो सकता है।
-      </p>
-      <p style="margin-top:10px;color:#667085">
-        यह केवल portfolio writing sample है और कानूनी सलाह नहीं है।
-      </p>
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About Me</h2>
+        <p>मेरे बारे में और मैं किस तरह का content तैयार करता हूँ।</p>
+      </div>
+
+      <div class="about">
+        <div class="about-box">
+          <h3>⚖️ Law Background</h3>
+          <p>
+            Law background के साथ हिंदी legal content writing में रुचि।
+            मेरा उद्देश्य कानूनी जानकारी को आसान और समझने योग्य बनाना है।
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>मैं क्या करता हूँ?</h3>
+          <p>
+            Legal topics, explainers, educational articles और social-media
+            content को सरल हिंदी में तैयार करने पर focus करता हूँ।
+            कठिन कानूनी concepts को practical और reader-friendly तरीके से प्रस्तुत करना मेरा लक्ष्य है।
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Why Work With Me?</h2>
-    <div class="grid">
-      <div class="card"><h3>Simple Hindi</h3><p>कानूनी जानकारी को आसान और समझने योग्य भाषा में लिखने पर focus.</p></div>
-      <div class="card"><h3>Reader Focused</h3><p>Clear headings, short paragraphs और easy-to-read structure.</p></div>
-      <div class="card"><h3>Legal Background</h3><p>Law education के आधार पर legal topics को समझने और research करने की क्षमता.</p></div>
+  <section id="topics">
+    <div class="container">
+      <div class="section-head">
+        <h2>Legal Topics</h2>
+        <p>Website पर आगे इन categories में content जोड़ा जा सकता है।</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📜</div>
+          <h3>Constitutional Law</h3>
+          <p>संविधान और उससे जुड़े concepts की आसान व्याख्या।</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>Contract Law</h3>
+          <p>Contracts और उनके basic legal concepts को सरल भाषा में समझना।</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏛️</div>
+          <h3>Criminal Law</h3>
+          <p>Criminal law से जुड़े educational explainers और जानकारी।</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>Legal Education</h3>
+          <p>Law students के लिए useful educational content और resources।</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔎</div>
+          <h3>Legal Explainers</h3>
+          <p>कठिन legal terms और concepts की simple explanations।</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Social Media Content</h3>
+          <p>Legal awareness के लिए short-form और social-media content।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <div class="container">
+      <div class="section-head">
+        <h2>My Work</h2>
+        <p>यहाँ आपके articles, samples और projects बाद में जोड़े जा सकते हैं।</p>
+      </div>
+
+      <div class="work-list">
+        <div class="work-item">
+          <h3>📝 Legal Articles</h3>
+          <p>Hindi में informative और reader-friendly legal articles.</p>
+        </div>
+
+        <div class="work-item">
+          <h3>🎓 Student Content</h3>
+          <p>Law students के लिए notes, explainers और useful resources.</p>
+        </div>
+
+        <div class="work-item">
+          <h3>🎥 Short-form Content</h3>
+          <p>Legal awareness और education के लिए short video ideas और scripts.</p>
+        </div>
+
+        <div class="work-item">
+          <h3>💡 Legal Explainers</h3>
+          <p>Complex topics को simple examples और clear language में समझाना।</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <div class="contact">
-      <h2>Let's Work Together</h2>
-      <p class="intro">अगर आपको हिंदी legal content की जरूरत है, तो मुझसे संपर्क कर सकते हैं।</p>
-      <p style="margin-top:15px"><strong>Email:</strong> अपना email यहाँ लिखें</p>
-      <p><strong>WhatsApp:</strong> अपना WhatsApp नंबर यहाँ लिखें</p>
+    <div class="container">
+      <div class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+          Legal content, articles या किसी project के लिए मुझसे संपर्क किया जा सकता है।
+        </p>
+
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="mailto:your-email:shivam895711@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="#top">Back to Top ↑</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    © 2026 Shivam Pal · Hindi Legal Content Writer
-  </footer>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Shivam Pal • Hindi Legal Content Writer
+  </div>
+</footer>
 
 </body>
 </html>
+
